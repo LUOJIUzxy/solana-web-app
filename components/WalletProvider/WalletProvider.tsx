@@ -5,7 +5,7 @@ import {
 } from "@solana/wallet-adapter-react"
 import { WalletAdapterNetwork } from "@solana/wallet-adapter-base"
 import {
-  BackpackWalletAdapter,
+  AlphaWalletAdapter,
   LedgerWalletAdapter,
   PhantomWalletAdapter,
   SolflareWalletAdapter,
@@ -38,7 +38,7 @@ const Wallet = ({ children }: { children: React.ReactChild }) => {
        * your users connect to will be loaded.
        */
       new PhantomWalletAdapter(),
-      new BackpackWalletAdapter(),
+      new AlphaWalletAdapter(),
       new SolflareWalletAdapter(),
       new LedgerWalletAdapter(),
     ],

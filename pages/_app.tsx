@@ -5,6 +5,7 @@ import Router, { AppProps } from "next/dist/shared/lib/router/router"
 import dynamic from "next/dynamic"
 
 import "@solana/wallet-adapter-react-ui/styles.css"
+import {NextUIProvider} from "@nextui-org/react";
 
 // @ts-ignore
 import withGA from "next-ga"
@@ -22,6 +23,7 @@ function App(props: AppProps) {
   const { Component, pageProps } = props
 
   return (
+    <NextUIProvider>
     <ThemeProvider theme={defaultTheme}>
       <Head>
         {/** Load font styles directly on the document to prevent flashes */}
@@ -33,6 +35,7 @@ function App(props: AppProps) {
         <Component {...pageProps} />
       </WalletProvider>
     </ThemeProvider>
+    </NextUIProvider>
   )
 }
 

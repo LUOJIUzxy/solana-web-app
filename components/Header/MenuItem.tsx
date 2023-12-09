@@ -1,5 +1,7 @@
 import Link from "next/link"
-import { Button, Flex } from "theme-ui"
+import { Flex } from "theme-ui"
+
+import {Button} from '@nextui-org/react'
 
 export const MenuItem = ({
   icon,
@@ -23,7 +25,8 @@ export const MenuItem = ({
       }}
     >
       <Link href={href}>
-        <Button variant="resetted">{icon}</Button>
+        <Button >{icon}</Button>
+        <Button>Click me</Button>
       </Link>
     </Flex>
   )

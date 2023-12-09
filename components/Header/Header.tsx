@@ -1,18 +1,22 @@
 /** @jsxImportSource theme-ui */
 import Link from "next/link"
-import { Button, Container, Flex, Text } from "@theme-ui/components"
+//import { Button, Container, Flex, Text } from "@theme-ui/components"
+import { Container, Grid, TextField } from "@mui/material"
+import { Button } from '@nextui-org/react'
 
 import WalletManager from "@/components/WalletManager/WalletManager"
 import { useState } from "react"
 import { CloseIcon, MenuIcon, MoonLogo, ProfileLogo, SunLogo } from "../icons"
 import { useColorMode } from "theme-ui"
 
+
 const Header = () => {
   const [isMobileMenuActive, setIsMobileMenuActive] = useState(false)
   const [colorMode, setColorMode] = useColorMode()
 
   return (
-    <Flex
+    <div>
+    <div
       sx={{
         position: "sticky",
         top: 0,
@@ -22,36 +26,34 @@ const Header = () => {
         borderColor: "background2",
       }}
     >
-      <Container>
-        <Flex
+      {/* <Container> */}
+        <div
           sx={{
             alignItems: "center",
             justifyContent: "space-between",
             padding: "1.6rem 1.6rem 0",
             height: "8rem",
           }}
-        >
-          <Link href="/" passHref>
-            <Flex as="a" sx={{ alignItems: "center", flexDirection: "column" }}>
-              <Flex sx={{ alignItems: "center" }}>
-                <Text as="h1" variant="headingSpecial" ml=".4rem">
+        > 
+            <div sx={{ alignItems: "center", flexDirection: "column" }}>
+              <div sx={{ alignItems: "center" }}>
+                <h1>
                   Solana Web App
-                </Text>
-              </Flex>
-            </Flex>
-          </Link>
-          <Text
-            variant="small"
+                </h1>
+              </div>
+            </div>
+          <h3
+           // variant="small"
             sx={{
               marginRight: "auto",
             }}
           >
             &nbsp;&nbsp;&nbsp;&#8226;&nbsp;
             {process.env.NEXT_PUBLIC_CONNECTION_NETWORK}
-          </Text>
+          </h3>
 
-          <Flex
-            as="nav"
+          <div
+          //  as="nav"
             sx={{
               gap: "1.6rem",
               display: "none",
@@ -92,7 +94,7 @@ const Header = () => {
               },
             }}
           >
-            <Flex
+            <div
               sx={{
                 alignSelf: "stretch",
                 justifyContent: "flex-end",
@@ -112,7 +114,7 @@ const Header = () => {
               >
                 <CloseIcon />
               </Button>
-            </Flex>
+            </div>
             {/* Change theme-ui color mode */}
             {/* <Flex
               sx={{
@@ -138,7 +140,7 @@ const Header = () => {
             </Flex> */}
             {/* Finish menu items */}
             <WalletManager />
-          </Flex>
+          </div>
           <Button
             sx={{
               padding: ".8rem",
@@ -150,9 +152,9 @@ const Header = () => {
           >
             <MenuIcon />
           </Button>
-        </Flex>
-      </Container>
-    </Flex>
+        </div>
+    </div>
+    </div>
   )
 }
 

@@ -15,6 +15,7 @@
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
+    "allowSyntheticDefaultImports" : true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
@@ -31,7 +32,8 @@
       ],
       "@/hooks/*": [
         "hooks/*"
-      ]
+      ],
+      "react": [ "./node_modules/@types/react" ]
     }
   },
   "include": [
